@@ -1,0 +1,20 @@
+<web-app>
+    <servlet>
+        <servlet-name>SingleSignOnService</servlet-name>
+        <servlet-class>no.steras.opensamlSamples.opensaml4WebprofileDemo.idp.SingleSignOnServlet</servlet-class>
+    </servlet>
+	<servlet>
+        <servlet-name>ArtifactResolutionServlet</servlet-name>
+        <servlet-class>no.steras.opensamlSamples.opensaml4WebprofileDemo.idp.ArtifactResolutionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SingleSignOnService</servlet-name>
+        <url-pattern>/idp/singleSignOnService</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>ArtifactResolutionServlet</servlet-name>
+        <url-pattern>/idp/artifactResolutionService</url-pattern>
+    </servlet-mapping>
+
+</web-app>
