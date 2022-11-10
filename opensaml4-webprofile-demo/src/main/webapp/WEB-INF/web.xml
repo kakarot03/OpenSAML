@@ -1,0 +1,30 @@
+<web-app>
+    <servlet>
+        <servlet-name>ApplicationServlet</servlet-name>
+        <servlet-class>no.steras.opensamlSamples.opensaml4WebprofileDemo.app.ApplicationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConsumerServlet</servlet-name>
+        <servlet-class>no.steras.opensamlSamples.opensaml4WebprofileDemo.sp.ConsumerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ApplicationServlet</servlet-name>
+        <url-pattern>/app/appservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsumerServlet</servlet-name>
+        <url-pattern>/sp/consumer</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>AccessFilter</filter-name>
+        <filter-class>no.steras.opensamlSamples.opensaml4WebprofileDemo.sp.AccessFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AccessFilter</filter-name>
+        <url-pattern>/app/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+</web-app>
